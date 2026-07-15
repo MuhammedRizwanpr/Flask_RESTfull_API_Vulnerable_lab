@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create User Account</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/create_user.css') }}">
+</head>
+<body>
+
+    <div class="signup-container">
+
+        <div class="signup-card">
+
+            <h2>Create User Account</h2>
+
+            {% if message %}
+                <p class="success">{{ message }}</p>
+            {% endif %}
+
+            {% if error %}
+                <p class="error">{{ error }}</p>
+            {% endif %}
+
+            <form action="/api/create_user" method="POST">
+
+                <label>Full Name</label>
+                <input type="text" name="fullname" placeholder="Enter your full name" required>
+
+                <label>Username</label>
+                <input type="text" name="username" placeholder="Choose a username" required>
+
+                <label>Email</label>
+                <input type="email" name="email" placeholder="Enter your email" required>
+
+                <label>Password</label>
+                <input type="password" name="password" placeholder="Create a password" required>
+
+                <label>Bio</label>
+                <input class="bio" type="text" name="bio" placeholder="Enter about user">
+
+                <button type="submit">Create User Account</button>
+
+            </form>
+
+            <p class="back_dashboard"> Back to dashboard <a href="/admin">click</a> </p>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

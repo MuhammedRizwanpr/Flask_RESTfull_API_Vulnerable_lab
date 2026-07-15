@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/user_login.css') }}">
+</head>
+<body>
+
+<div class="login-container">
+
+    <h1>User Login</h1>
+
+    <form onsubmit="login_validate(); return false;">
+
+        <label>Username</label>
+
+        <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Enter Username"
+            required>
+
+        <label>Password</label>
+
+        <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter Password"
+            required>
+
+        <button type="submit">
+            Login
+        </button>
+
+    </form>
+
+</div>
+    <script src="{{ url_for('static', filename='js/user_login.js') }}"></script>
+
+</body>
+</html>

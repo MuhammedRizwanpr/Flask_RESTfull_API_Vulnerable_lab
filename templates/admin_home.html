@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin_home.css') }}">
+</head>
+<body>
+
+    <header>
+
+        <h1>Admin Dashboard</h1>
+
+        <a href="/admin_logout" class="logout-btn">
+            Logout
+        </a>
+
+    </header>
+
+    <div class="container">
+
+        <div class="top-bar">
+
+            <h2>Users</h2>
+
+            <a href="/create_user" class="login-btn">
+                + Add New User
+            </a>
+
+        </div>
+
+        <!-- Success / Error Message -->
+        <div id="message"></div>
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Bio</th>
+                    <th>Actions</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="usersTable">
+
+            </tbody>
+
+        </table>
+
+        <div id="form-area">
+
+        </div>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='js/admin_home.js') }}"></script>
+
+</body>
+</html>

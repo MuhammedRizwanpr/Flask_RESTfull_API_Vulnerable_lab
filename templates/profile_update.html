@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/profile_update.css') }}">
+</head>
+<body>
+    <div class="edit-form">
+
+        <h2>Edit User</h2>
+
+        <label>Username</label>
+        <input
+            id="editUsername"
+            class="edit-input"
+            type="text"
+            value="{{ user.username }}">
+
+        <label>Email</label>
+        <input
+            id="editEmail"
+            class="edit-input"
+            type="email"
+            value="{{ user.email }}">
+        
+        <label>New Password</label>
+        <input
+            id="editPassword"
+            class="edit-input"
+            type="password">
+
+        <input
+            type="hidden"
+            id="userId"
+            value="{{ user.id }}">
+
+        <label>Bio</label>
+        <textarea
+            id="editBio"
+            class="edit-textarea">{{ user.bio }}</textarea>
+            
+
+        <button
+            class="update-btn"
+        onclick="updateProfile()">
+            
+            Update User
+
+        </button>
+
+        </div>
+            <script src="{{ url_for('static', filename='js/profile_update.js') }}"></script>
+        
+</body>
+</html>
