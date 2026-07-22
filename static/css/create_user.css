@@ -99,3 +99,32 @@ button:hover{
     margin-left: 87px;
     margin-top: 18px;
 }
+.valid_password{
+    color: red;
+}
+.password-box{
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.password-box input{
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 10px;
+}
+
+.eye-btn{
+    border: none;
+    /* background: transparent; */
+    cursor: pointer;
+    font-size: 26px;
+    padding: 0px;
+    width: 33px;
+    height: 0px;
+    background-color: white;
+    color: black;
+    margin-top: -38px;
+}

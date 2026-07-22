@@ -15,7 +15,7 @@
 
             <h2>Admin Sign Up</h2>
 
-            <form action="/admin_signup" method="POST">
+            <form action="/admin_signup" method="POST" onsubmit=" return validateForm(event)">
 
                 <label>Full Name</label>
                 <input type="text" name="fullname" placeholder="Enter your full name" required>
@@ -27,10 +27,39 @@
                 <input type="email" name="email" placeholder="Enter your email" required>
 
                 <label>Password</label>
-                <input type="password" name="password" placeholder="Create a password" required>
+                
+                <div class="password-box">
+                     <input
+                 type="password"
+                 id="password" 
+                 name="password" 
+                 placeholder="Create a password" 
+                 oninput="validatePassword()" 
+                 required
+                 >
+                    <button
+                        type="button"
+                        class="eye-btn"
+                        onclick="togglePassword()">
+                        👁
+                    </button>
 
-                <!-- <label>Confirm Password</label>
-                <input type="password" name="confirm_password" placeholder="Confirm your password" required> -->
+                </div>
+
+                <span class="valid_password" id="passwordMessage">
+                    
+                </span>
+
+                <label>Confirm Password</label>
+                <input type="password" 
+                id="confirm_password"
+                name="confirm_password" 
+                placeholder="Confirm your password" 
+                oninput="confirmPassword()"
+                required>
+
+                <span id="check_password" class="valid_password"></span>
+
 
                 <button type="submit">Create Admin Account</button>
 
@@ -44,6 +73,6 @@
         </div>
 
     </div>
-
+    <script src="{{ url_for('static', filename='js/create_account.js') }}"></script>
 </body>
 </html>

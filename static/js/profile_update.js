@@ -1,12 +1,11 @@
 async function updateProfile() {
 
-    const id = document.getElementById("userId").value;
     const username = document.getElementById("editUsername").value;
     const email = document.getElementById("editEmail").value;
     const password = document.getElementById("editPassword").value;
     const bio = document.getElementById("editBio").value;
 
-    const response = await fetch(`/api/user/${id}`, {
+    const response = await fetch("/api/user", {
 
         method: "PUT",
 
@@ -42,4 +41,4 @@ async function updateProfile() {
 
     }
 
-}
+}no

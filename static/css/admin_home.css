@@ -146,3 +146,8 @@ td{
 .update-btn:hover{
     background: #2980b9;
 }
+.welcome-message {
+    font-size: 29px;
+    margin-right: -1210px;
+    color: #ffffff;
+}

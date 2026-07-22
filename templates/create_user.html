@@ -23,22 +23,54 @@
                 <p class="error">{{ error }}</p>
             {% endif %}
 
-            <form action="/api/create_user" method="POST">
+            <form action="/api/create_user" method="POST" onsubmit=" return validateForm(event)">
 
                 <label>Full Name</label>
-                <input type="text" name="fullname" placeholder="Enter your full name" required>
+                <input type="text" name="fullname" placeholder="Enter your full name" maxlength="30" required>
 
                 <label>Username</label>
-                <input type="text" name="username" placeholder="Choose a username" required>
+                <input type="text" name="username" placeholder="Choose a username" maxlength="20" required >
 
                 <label>Email</label>
-                <input type="email" name="email" placeholder="Enter your email" required>
+                <input type="email" name="email" placeholder="Enter your email" maxlength="30" required>
 
                 <label>Password</label>
-                <input type="password" name="password" placeholder="Create a password" required>
+                <div class="password-box">
+                     <input
+                        maxlength="20"
+                        type="password"
+                        id="password" 
+                        name="password" 
+                        placeholder="Create a password" 
+                        oninput="validatePassword()" 
+                        required
+                 >
+                    <button
+                        type="button"
+                        class="eye-btn"
+                        onclick="togglePassword()">
+                        👁
+                    </button>
+
+                </div>
+
+                <span class="valid_password" id="passwordMessage">
+                    
+                </span>
+
+                <label>Confirm Password</label>
+                <input type="password" 
+                maxlength="20"
+                id="confirm_password"
+                name="confirm_password" 
+                placeholder="Confirm your password" 
+                oninput="confirmPassword()"
+                required>
+
+                <span id="check_password" class="valid_password"></span>
 
                 <label>Bio</label>
-                <input class="bio" type="text" name="bio" placeholder="Enter about user">
+                <input class="bio" type="text" name="bio" placeholder="Enter about user" maxlength="100">
 
                 <button type="submit">Create User Account</button>
 
@@ -49,6 +81,6 @@
         </div>
 
     </div>
-
+    <script src="{{ url_for('static', filename='js/create_account.js') }}"></script>
 </body>
 </html>
